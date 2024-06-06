@@ -14,5 +14,14 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [function ({ addUtilities }) {
+    const newUtilities = {
+      ".show-guide": {
+        borderWidth: "1px",
+        borderStyle: "dashed",
+        borderColor: "red",
+      },
+    };
+    addUtilities(newUtilities, ["responsive", "hover"]);
+  },],
 };
